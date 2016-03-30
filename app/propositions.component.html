@@ -1,0 +1,12 @@
+<ul class="collection with-header">
+    <li class="collection-header"><h4>Proposed Lunch Schedules</h4></li>
+    <li class="collection-item avatar" *ngFor="#proposition of propositions">
+        <i class="material-icons circle ">restaurant</i>
+        <p>
+            <b>When:</b> {{proposition.time}}<br>
+            <b>Where:</b> {{proposition.place}} <br>
+            <b>Proposed By:</b> {{proposition.name}}<br>
+        </p>
+        <a class="waves-effect waves-light btn secondary-content"><i class="material-icons right">thumb_up</i>vote</a>
+    </li>
+</ul>
