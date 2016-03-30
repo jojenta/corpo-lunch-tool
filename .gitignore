@@ -1,5 +1,6 @@
 .idea
 app/**/*.js*
+backend/**/*.js*
 node_modules
 typings
 npm-debug.log
