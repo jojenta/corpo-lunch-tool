@@ -2,17 +2,17 @@
     <form class="col s12">
         <div class="input-field col s12">
             <i class="material-icons prefix">perm_identity</i>
-            <input id="name" [(ngModel)]="name" type="text" class="validate">
+            <input id="name" [(ngModel)]="proposition.name" type="text" class="validate">
             <label for="name">Name</label>
         </div>
         <div class="input-field col s12">
             <i class="material-icons prefix">schedule</i>
-            <input id="time" [(ngModel)]="time" type="time" class="validate">
+            <input id="time" [(ngModel)]="proposition.time" type="time" class="validate">
             <label for="time" class="active">Time</label>
         </div>
         <div class="input-field col s12">
             <i class="material-icons prefix">business</i>
-            <input id="place" [(ngModel)]="place" type="text" class="validate">
+            <input id="place" [(ngModel)]="proposition.place" type="text" class="validate">
             <label for="place">Place</label>
         </div>
         <div *ngIf="proposing" class="progress">
