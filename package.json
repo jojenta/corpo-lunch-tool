@@ -1,5 +1,5 @@
 {
-  "name": "angular2-quickstart",
+  "name": "corpo-lunch-tool",
   "version": "1.0.0",
   "scripts": {
     "start": "concurrently \"npm run tsc:w\" \"webpack --watch\" \"nodemon app.js\"",

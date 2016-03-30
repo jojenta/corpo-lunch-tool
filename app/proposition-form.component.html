@@ -1,0 +1,25 @@
+<div class="row">
+    <form class="col s12">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">perm_identity</i>
+            <input id="name" [(ngModel)]="name" type="text" class="validate">
+            <label for="name">Name</label>
+        </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">schedule</i>
+            <input id="time" [(ngModel)]="time" type="time" class="validate">
+            <label for="time" class="active">Time</label>
+        </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">business</i>
+            <input id="place" [(ngModel)]="place" type="text" class="validate">
+            <label for="place">Place</label>
+        </div>
+        <div *ngIf="proposing" class="progress">
+            <div class="indeterminate"></div>
+        </div>
+        <button class="btn waves-effect waves-blue right" type="submit" (click)="propose()">Propose
+            <i class="material-icons right">send</i>
+        </button>
+    </form>
+</div>
