@@ -1,4 +1,4 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {PropositionFormComponent} from './proposition-form.component'
 import {SocketHandlerService} from './socketHandler.service';
 
@@ -8,9 +8,6 @@ import {SocketHandlerService} from './socketHandler.service';
     directives: [PropositionFormComponent],
     providers: [SocketHandlerService]
 })
-export class AppComponent implements OnInit{
+export class AppComponent{
     constructor( private _socketHandlerService : SocketHandlerService ){}
-    ngOnInit(){
-        this._socketHandlerService.initialize();
-    }
 }
