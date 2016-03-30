@@ -1,5 +1,5 @@
-module.exports = {
-    connect: function(io){
+export class SocketServer {
+    connect(io) {
         io.on('connection', function (socket) {
             console.log(socket.id + ' connected');
             socket.on('event', function (message) {
