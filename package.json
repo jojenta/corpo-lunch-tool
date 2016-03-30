@@ -2,7 +2,7 @@
   "name": "angular2-quickstart",
   "version": "1.0.0",
   "scripts": {
-    "start": "concurrently \"npm run tsc:w\" \"nodemon app.js\" ",
+    "start": "concurrently \"npm run tsc:w\" \"webpack --watch\" \"nodemon app.js\"",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
     "typings": "typings",
