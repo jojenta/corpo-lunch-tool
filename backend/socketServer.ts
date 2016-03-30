@@ -1,11 +1,14 @@
+import {Proposition} from '../app/proposition';
+
 export class SocketServer {
+    propositions: Proposition[];
     connect(io) {
         io.on('connection', function (socket) {
             console.log(socket.id + ' connected');
-            socket.on('event', function (message) {
-                console.log(message);
+            socket.on('newProposal', function (proposition) {
+                this.propositions.push(proposition);
+                io.emit('newProposal', {newItem: proposition, allItems: this.propositions});
             });
-            socket.emit('event', { message: 'Message >.<' });
         });
     }
 }
