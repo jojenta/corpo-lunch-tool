@@ -4,8 +4,7 @@ import {SocketHandlerService} from './socketHandler.service';
 
 @Component({
     selector: 'proposition-form',
-    templateUrl: 'app/proposition-form.component.html',
-    providers: [SocketHandlerService]
+    templateUrl: 'app/proposition-form.component.html'
 })
 
 export class PropositionFormComponent {

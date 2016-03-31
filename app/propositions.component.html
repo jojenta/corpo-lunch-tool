@@ -1,7 +1,6 @@
 <ul *ngIf="arePropositionsAvailable()"  class="collection with-header">
     <li class="collection-header"><h5>Proposed Lunch Schedules </h5></li>
     <li class="collection-item avatar" *ngFor="#proposition of propositions">
-        {{propositions.length}}
         <i class="material-icons circle ">restaurant</i>
         <p>
             <b>When:</b> {{proposition.time}}<br>

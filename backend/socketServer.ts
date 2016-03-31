@@ -14,8 +14,8 @@ export class SocketServer {
                 }
                 io.emit('newProposal', {newItem: proposition, allItems: this.propositions});
             });
-            socket.on('getPropositions', (proposition) => {
-                io.emit('newProposal', {newItem: proposition, allItems: this.propositions});
+            socket.on('getPropositions', (message) => {
+                socket.emit('getPropositions', this.propositions);
             });
         });
     }

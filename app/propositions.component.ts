@@ -17,9 +17,10 @@ export class PropositionsComponent  implements OnInit {
 
         this._socketHandlerService.getSocket().emit("getPropositions");
         this._socketHandlerService.getSocket().on("newProposal", (msg:any)=>{
-            console.log(msg);
             this.propositions=msg.allItems;
-            console.log(this.propositions);
+        });
+        this._socketHandlerService.getSocket().on("getPropositions", (msg:any)=>{
+            this.propositions=msg;
         });
     }
     arePropositionsAvailable(){
