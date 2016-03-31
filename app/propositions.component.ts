@@ -3,7 +3,7 @@ import {Proposition} from './proposition';
 
 @Component({
     selector: 'propositions',
-    templateUrl: 'app/propositions.component.html'
+    templateUrl: 'propositions.component.html'
 })
 
 export class PropositionsComponent  {

@@ -1,11 +1,13 @@
 import {Component} from 'angular2/core';
-import {PropositionFormComponent} from './proposition-form.component'
+import {PropositionFormComponent} from './proposition-form.component';
+import {PropositionsComponent} from './propositions.component';
 import {SocketHandlerService} from './socketHandler.service';
 
 @Component({
     selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1><proposition-form></proposition-form>',
-    directives: [PropositionFormComponent],
+    templateUrl: 'app.component.html',
+    styleUrls: ['app.component.css'],
+    directives: [PropositionsComponent, PropositionFormComponent],
     providers: [SocketHandlerService]
 })
 export class AppComponent{
