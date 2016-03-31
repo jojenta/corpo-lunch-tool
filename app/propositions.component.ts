@@ -1,20 +1,28 @@
-import {Component} from 'angular2/core';
+import {Component, OnInit} from 'angular2/core';
 import {Proposition} from './proposition';
+import {SocketHandlerService} from './socketHandler.service'
 
 @Component({
     selector: 'propositions',
     templateUrl: 'propositions.component.html'
 })
 
-export class PropositionsComponent  {
+export class PropositionsComponent  implements OnInit {
     propositions: Proposition[];
-    propositions= PROPOSITIONS;
 
+    constructor(private _socketHandlerService:SocketHandlerService){
+        this.propositions=[];
+    }
+    ngOnInit() {
+
+        this._socketHandlerService.getSocket().emit("getPropositions");
+        this._socketHandlerService.getSocket().on("newProposal", (msg:any)=>{
+            console.log(msg);
+            this.propositions=msg.allItems;
+            console.log(this.propositions);
+        });
+    }
+    arePropositionsAvailable(){
+        return (this.propositions && this.propositions.length>0);
+    }
 }
-
-var PROPOSITIONS: Proposition[] =  [
-    {"time": "11 am", "place": "BonChon", "name":"Torg", "votes": 0},
-    {"time": "10:30 am", "place": "Kanin Club", "name":"Shell", "votes": 0},
-    {"time": "11:00 am", "place": "Yellow Cab", "name":"Jobeth", "votes": 0},
-    {"time": "12 noon", "place": "Ramen Nagi", "name":"Gino", "votes": 0}
-];

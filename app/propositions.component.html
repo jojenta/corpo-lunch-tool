@@ -1,6 +1,7 @@
-<ul class="collection with-header">
-    <li class="collection-header"><h5>Proposed Lunch Schedules</h5></li>
+<ul *ngIf="arePropositionsAvailable()"  class="collection with-header">
+    <li class="collection-header"><h5>Proposed Lunch Schedules </h5></li>
     <li class="collection-item avatar" *ngFor="#proposition of propositions">
+        {{propositions.length}}
         <i class="material-icons circle ">restaurant</i>
         <p>
             <b>When:</b> {{proposition.time}}<br>
@@ -9,4 +10,7 @@
         </p>
         <a class="waves-effect waves-light btn secondary-content"><i class="material-icons right">thumb_up</i>vote</a>
     </li>
+</ul>
+<ul *ngIf="!arePropositionsAvailable()"  class="collection with-header">
+    <li class="collection-header"><h5>No Proposed Lunch Schedules Yet </h5></li>
 </ul>

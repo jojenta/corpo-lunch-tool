@@ -9,7 +9,12 @@ export class SocketServer {
         io.on('connection', (socket) => {
             console.log(socket.id + ' connected');
             socket.on('newProposal', (proposition) => {
-                this.propositions.push(proposition);
+                if (proposition){
+                    this.propositions.push(proposition);
+                }
+                io.emit('newProposal', {newItem: proposition, allItems: this.propositions});
+            });
+            socket.on('getPropositions', (proposition) => {
                 io.emit('newProposal', {newItem: proposition, allItems: this.propositions});
             });
         });
