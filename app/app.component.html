@@ -3,12 +3,25 @@
     <div class="nav-wrapper">
       <div class="brand-logo">Lunch Tool</div>
       <ul class="right">
-        <li class="active clt-deadline">Vote until 11:00</li>
+        <li class="active clt-deadline">Vote until 10:30</li>
         <!--<li><a><i class="material-icons">chat_bubble_outline</i><span class="new badge">1</span></a></li>-->
-        <li><a>Notifications<span class="new badge">1</span></a></li>
+        <li><a href="#notifications" (click)="openNotifs()">Notifications<span *ngIf="notifications.length" class="new badge">{{notifications.length}}</span></a></li>
       </ul>
     </div>
   </nav>
+  <div id="notifications" class="modal">
+    <div class="modal-content">
+      <h4>Notifications</h4>
+      <ul class="collection">
+        <li *ngFor="#notif of notifications" class="collection-item">
+          <i class="material-icons circle">email</i> {{notif.msg}} {{notif.name}}
+        </li>
+      </ul>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class=" modal-action modal-close waves-effect waves-green btn-flat" (click)="closeNotifs()">Close</a>
+    </div>
+  </div>
   <div class="col s4">
     <proposition-form></proposition-form>
   </div>

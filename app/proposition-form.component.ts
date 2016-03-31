@@ -16,7 +16,6 @@ export class PropositionFormComponent {
     }
     propose() {
         this.proposing = true;
-        Materialize.toast(this.proposition.name + ' ' + this.proposition.time + ' ' + this.proposition.place, 4000);
         this._socketHandlerService.getSocket().emit('newProposal', this.proposition);
         this._resetForm();
     }
