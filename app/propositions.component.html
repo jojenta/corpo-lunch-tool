@@ -1,15 +1,15 @@
-<ul *ngIf="arePropositionsAvailable()"  class="collection with-header">
+<ul *ngIf="arePropositionsAvailable()"  class="collection with-header clt-component">
     <li class="collection-header"><h5>Proposed Lunch Schedules </h5></li>
     <li class="collection-item avatar" *ngFor="#proposition of propositions">
-        <i class="material-icons circle ">restaurant</i>
+        <i class="material-icons circle indigo">restaurant</i>
         <p>
             <b>When:</b> {{proposition.time}}<br>
             <b>Where:</b> {{proposition.place}} <br>
             <b>Proposed By:</b> {{proposition.name}}<br>
         </p>
-        <a class="waves-effect waves-light btn secondary-content"><i class="material-icons right">thumb_up</i>vote</a>
+        <a class="waves-effect waves-light btn secondary-content indigo darken-2"><i class="material-icons right">thumb_up</i>vote</a>
     </li>
 </ul>
-<ul *ngIf="!arePropositionsAvailable()"  class="collection with-header">
-    <li class="collection-header"><h5>No Proposed Lunch Schedules Yet </h5></li>
+<ul *ngIf="!arePropositionsAvailable()"  class="collection clt-componentempty">
+    <li class="collection-item"><h5>No Proposed Lunch Schedules Yet </h5></li>
 </ul>
