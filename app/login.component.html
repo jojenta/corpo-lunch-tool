@@ -1,0 +1,47 @@
+<div class="row">
+    <nav class="col s12 indigo darken-4">
+        <div class="nav-wrapper">
+            <div class="brand-logo">Lunch Tool</div>
+        </div>
+    </nav>
+    <div class="row clt-form">
+        <form class="col s12">
+            <div class="input-field col s12">
+                <i class="material-icons prefix">face</i>
+                <input id="name" [(ngModel)]="user.name" type="text" class="validate">
+                <label for="name">Name</label>
+            </div>
+            <div class="input-field col s12">
+                <i class="material-icons prefix">vpn_key</i>
+                <input id="password" [(ngModel)]="user.password" type="password" class="validate">
+                <label for="password">password</label>
+            </div>
+            <div *ngIf="proposing" class="progress">
+                <div class="indeterminate"></div>
+            </div>
+            <button class="btn waves-effect waves-blue right" type="button" (click)="login()">Login
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+
+    <footer class="col s12 page-footer indigo darken-1 clt-footer">
+        <div class="footer-copyright">
+            <div>
+                © What's for lunch?
+                <!--<a class="grey-text text-lighten-4 right" href="#!">More Links</a>-->
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+
