@@ -13,4 +13,3 @@ Bug: Timezone difference not accounted for
 Possible Bug: CORD token has already expired but still stored in localStorage. No checking if CORD login still alive.
 Todo: Voters to be displayed via card reveal instead of modal
 
-test txt
